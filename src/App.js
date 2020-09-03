@@ -4,8 +4,6 @@ import Sidebar from './sidebar';
 import Api from './api';
 
 
-
-
 class App extends React.Component{
   constructor(props) {
     super(props);
@@ -19,7 +17,7 @@ class App extends React.Component{
   }
 
   render(){
-    
+
     return (
       <div>
           <Sidebar active_li={this.selectedModule}/>
