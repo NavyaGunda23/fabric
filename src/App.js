@@ -16,8 +16,8 @@ class App extends React.Component{
     this.setState({ selected_li: val });
   }
 
-  render(){
 
+  render(){
     return (
       <div>
           <Sidebar active_li={this.selectedModule}/>
