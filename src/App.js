@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Sidebar from './sidebar';
+import Api from './api';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+class App extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected_li: ''
+    }
+    this.selectedModule = this.selectedModule.bind(this);
+  }
+  selectedModule(val) {
+    this.setState({ selected_li: val });
+  }
+
+  render(){
+    return (
+      <div>
+          <Sidebar active_li={this.selectedModule}/>
+          <Api />
+             <p className="ml-60">{this.state.selected_li}</p> 
+      </div>
+    );
+  }
 }
 
 export default App;
